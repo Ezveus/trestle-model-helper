@@ -13,15 +13,22 @@ gem 'trestle-resource_helpers'
 
 Run `bundle install`, and then restart your Rails server.
 
-To add a description block within an admin resource, use the `resource_description` method:
+To add a description block within an admin resource, use the `resource_description` method and define the translation key for the model:
 
 ```ruby
 Trestle.resource(:articles) do
-  resource_description do
-    'An article is a super dupper class to add some content to the blog!'
-  end
+  resource_description
 end
 ```
+
+```yaml
+en:
+  admin:
+    articles:
+      resource_description: An article is a super dupper class to add some content to the blog!
+```
+
+_N.B.: Replace the `articles` key by the table name corresponding to the resource's model._
 
 ## License
 
